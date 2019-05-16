@@ -70,11 +70,11 @@ export default class App extends React.Component {
                     <p>
                         This is a demonstration of declarative, reactive menus for Quip Live Apps.
                         It takes advantage of the React architecture in order to handle the menu state and updates.
-                </p>
+                    </p>
                     <p>
                         Despite being React components, the menu system does not actually render anything.
                         However, component updates cause the Quip toolbar to be updated.
-                </p>
+                    </p>
                 </div>
             </div>
         );

@@ -19,16 +19,12 @@ export default class MainMenu extends React.Component {
     let submenus = [];
 
     if (children) {
-      console.log('MainMenu', children);
       submenus = children
         .filter(child => child.type === Menu || child.type === MenuSeparator)
         .map(child => child.type.prototype.toQuipMenu.call(child));
-    } else {
-      submenus = [];
     }
 
     return {
-      type: 'main-menu',
       id: quip.apps.DocumentMenuCommands.MENU_MAIN,
       submenus
     };

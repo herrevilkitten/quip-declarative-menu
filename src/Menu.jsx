@@ -47,6 +47,8 @@ export default class Menu extends React.Component {
       menu.submenus = children
         .filter(child => child.type === Menu || child.type === MenuSeparator)
         .map(child => child.type.prototype.toQuipMenu.call(child));
+      delete menu.handler;
+      delete menu.isHeader;
     }
     return menu;
   }

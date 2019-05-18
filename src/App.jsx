@@ -1,9 +1,6 @@
 import Styles from "./App.less";
 
-import MenuBar from './MenuBar.jsx';
-import Menu from './Menu.jsx';
-import MainMenu from './MainMenu.jsx';
-import MenuSeparator from './MenuSeparator.jsx';
+import { MenuBar, Menu, MainMenu, MenuSeparator } from 'quip-react-menu';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -55,16 +52,21 @@ export default class App extends React.Component {
                 </div>
                 <MenuBar>
                     <MainMenu>
+                        Header
                         <Menu highlighted={this.state.highlighted} label={this.state.label}>
+                            <b>A header</b>
                             <Menu id="submenu" label="Submenu" handler={this.menuHandler}></Menu>
                         </Menu>
-                        <MenuSeparator></MenuSeparator>
+                        ----
+                        <b>Bold header?</b>
                     </MainMenu>
                     <MainMenu>
                         <Menu label="Submenu" handler={this.menuHandler} sublabel="hello"></Menu>
                     </MainMenu>
-                    <Menu highlighted={!this.state.highlighted} label={this.state.label + " !Highlighted"}></Menu>
-                    <Menu disabled={this.state.disabled} label={this.state.label + " Disabled"}></Menu>
+                    <b>Toolbar Header</b>
+                    <Menu highlighted={!this.state.highlighted} label={this.state.label + " !Highlighted"} handler={this.menuHandler}></Menu>
+                    <MenuSeparator></MenuSeparator>
+                    <Menu disabled={this.state.disabled} label={this.state.label + " Disabled"} handler={this.menuHandler}></Menu>
                 </MenuBar>
                 <div>
                     <p>

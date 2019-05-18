@@ -10,5 +10,9 @@
     "author": "",
     "devDependencies": {
         "quip-apps-webpack-config": ">=0.0.39"
+    },
+    "dependencies": {
+        "prop-types": "^15.7.2",
+        "quip-react-menu": "file:../quip-react-menu"
     }
 }
